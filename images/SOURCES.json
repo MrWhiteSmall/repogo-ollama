@@ -1,0 +1,34 @@
+{
+  "type": "Original compositions of actual local-model input/output; not software screenshots",
+  "model": "qwen3:0.6b Q4_K_M",
+  "sources": [
+    "fixtures.json",
+    "output/summary-v2.txt",
+    "output/extract-v1.txt",
+    "output/extract-v2.txt"
+  ],
+  "images": [
+    {
+      "file": "01-summary.png",
+      "size": [
+        1500,
+        1260
+      ]
+    },
+    {
+      "file": "02-fields.png",
+      "size": [
+        1500,
+        1320
+      ]
+    },
+    {
+      "file": "03-run.png",
+      "size": [
+        1500,
+        1050
+      ]
+    }
+  ],
+  "alterations": "Actual text reflowed into document/table layout. No generated answer edits; fixture data fictional. System font rasterized, font not distributed."
+}

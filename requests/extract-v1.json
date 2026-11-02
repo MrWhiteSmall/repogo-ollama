@@ -1,0 +1,63 @@
+{
+  "model": "qwen3:0.6b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "从公告提取信息，按指定JSON结构返回。不要把旧公告填进更新后的字段。没有公布的截止日期必须是null。只返回JSON。"
+    },
+    {
+      "role": "user",
+      "content": "原创虚构公告：活动名称为「周末修理小课堂」。日期为2026-11-14，地点是青禾社区二楼。限额18人，费用0元。参加者需要自带电脑。报名截止日期没有公布。"
+    }
+  ],
+  "think": false,
+  "stream": false,
+  "keep_alive": "2m",
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 2048,
+    "num_predict": 500,
+    "num_gpu": 0,
+    "num_thread": 2
+  },
+  "format": {
+    "type": "object",
+    "properties": {
+      "活动": {
+        "type": "string"
+      },
+      "日期": {
+        "type": "string"
+      },
+      "地点": {
+        "type": "string"
+      },
+      "名额": {
+        "type": "integer"
+      },
+      "费用元": {
+        "type": "integer"
+      },
+      "需要自带电脑": {
+        "type": "boolean"
+      },
+      "截止日期": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "活动",
+      "日期",
+      "地点",
+      "名额",
+      "费用元",
+      "需要自带电脑",
+      "截止日期"
+    ],
+    "additionalProperties": false
+  }
+}
